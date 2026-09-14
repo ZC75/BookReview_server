@@ -11,7 +11,7 @@ import bcrypt from "bcryptjs"
 
 const app = express()
 
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.use(cors())
 app.use(express.json())
@@ -332,7 +332,7 @@ app.post("/api/reviews/:reviewId/like", (req, res) => {
     }
     // console.log("`````````send`````````")
     const query = "INSERT INTO likes (review_id,user_id) VALUES (?, ?)"
-    console.log(query)
+    // console.log(query)
     db.prepare(query).run(reviewId, userId)
 
     res.status(201).json({
