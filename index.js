@@ -717,10 +717,6 @@ app.get("/api/books/:isbn/ebook", async (req, res) => {
   }
 })
 
-app.listen(port, () => {
-  console.log(`server is listening on port ${port}`)
-})
-
 // ********* Account Setting *********
 
 // Check username exists
@@ -893,4 +889,8 @@ app.put("/api/users/:id/password", async (req, res) => {
       success: false,
     })
   }
+})
+
+app.listen(port, () => {
+  console.log(`server is listening on port ${port}`)
 })
